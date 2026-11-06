@@ -1,0 +1,36 @@
+# 构建产物
+target/
+dist/
+build/
+*.jar
+*.war
+*.class
+
+# 依赖
+node_modules/
+.pnpm-store/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+
+# 日志与临时文件
+logs/
+*.log
+*.tmp
+*.bak
+*.bak.*
+
+# 本地环境变量（只提交 .env.example）
+.env
+.env.local
+.env.*.local
+
+# 数据库脚本与运行时数据
+sql/
+data/
+uploads/

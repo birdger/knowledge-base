@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="600" viewBox="0 0 1280 600" font-family="'Segoe UI',Consolas,'PingFang SC',monospace">
+  <rect width="1280" height="600" fill="#0b1220"/>
+  <text x="640" y="44" text-anchor="middle" font-family="'Segoe UI','PingFang SC',sans-serif" font-size="24" font-weight="700" fill="#f1f5f9">仓库结构与后端分层</text>
+
+  <!-- repo tree -->
+  <g transform="translate(60,80)" font-size="14.5" fill="#cbd5e1">
+    <text x="0" y="0" fill="#7dd3fc" font-weight="700">knowledge-base/</text>
+    <text x="20" y="30">├── backend/                  <tspan fill="#64748b">// Spring Cloud 后端（Maven 多模块）</tspan></text>
+    <text x="44" y="56">├── kb-gateway/        <tspan fill="#64748b">// 8080 网关：路由 · JWT · 统一响应</tspan></text>
+    <text x="44" y="82">├── kb-user-auth/      <tspan fill="#64748b">// 8081 认证与 RBAC</tspan></text>
+    <text x="44" y="108">├── kb-document/       <tspan fill="#64748b">// 8082 文档域核心</tspan></text>
+    <text x="44" y="134">├── kb-search/         <tspan fill="#64748b">// 8083 ES 检索</tspan></text>
+    <text x="44" y="160">├── kb-file/           <tspan fill="#64748b">// 8084 文件与 MinIO</tspan></text>
+    <text x="44" y="186">├── kb-statistics/     <tspan fill="#64748b">// 8085 统计报表</tspan></text>
+    <text x="44" y="212">├── kb-ai/             <tspan fill="#64748b">// 8086 RAG 问答 / AI 写作</tspan></text>
+    <text x="44" y="238">├── kb-graph/          <tspan fill="#64748b">// 8088 Neo4j 知识图谱</tspan></text>
+    <text x="44" y="264">├── kb-foundation/     <tspan fill="#64748b">// 8089 通知 / 日志 / 字典</tspan></text>
+    <text x="44" y="290">└── kb-common/         <tspan fill="#64748b">// 公共组件（不独立部署）</tspan></text>
+    <text x="20" y="322">├── frontend/                 <tspan fill="#64748b">// React 18 + TS + AntD 5（28 页面 / 40 路由）</tspan></text>
+    <text x="20" y="352">├── docs/
+      <tspan fill="#64748b">// 架构图 · 界面截图 · 开发笔记</tspan></text>
+    <text x="20" y="382">├── .env.example              <tspan fill="#64748b">// 全部环境变量模板</tspan></text>
+    <text x="20" y="412">└── README.md</text>
+  </g>
+
+  <!-- layering -->
+  <g transform="translate(660,80)" font-family="'Segoe UI','PingFang SC',sans-serif">
+    <text x="0" y="0" font-size="16" font-weight="700" fill="#7dd3fc">后端统一分层（每个服务）</text>
+    <g font-size="13.5" font-weight="600">
+      <g transform="translate(0,24)">
+        <rect width="540" height="52" rx="8" fill="#1e293b" stroke="#475569"/>
+        <text x="16" y="24" fill="#e2e8f0">controller/　<tspan fill="#94a3b8" font-weight="400">REST 入口 · 参数校验 · Knife4j 注解</tspan></text>
+        <text x="16" y="42" fill="#64748b" font-size="11">统一响应体 Result&lt;T&gt; · 全局异常处理</text>
+      </g>
+      <g transform="translate(0,84)">
+        <rect width="540" height="52" rx="8" fill="#1e293b" stroke="#475569"/>
+        <text x="16" y="24" fill="#e2e8f0">service/　　<tspan fill="#94a3b8" font-weight="400">业务逻辑 · 事务 · 领域规则</tspan></text>
+        <text x="16" y="42" fill="#64748b" font-size="11">接口 + impl 分离，Feign 跨服务调用</text>
+      </g>
+      <g transform="translate(0,144)">
+        <rect width="540" height="52" rx="8" fill="#1e293b" stroke="#475569"/>
+        <text x="16" y="24" fill="#e2e8f0">mapper/　　<tspan fill="#94a3b8" font-weight="400">MyBatis-Plus 数据访问</tspan></text>
+        <text x="16" y="42" fill="#64748b" font-size="11">逻辑删除 · 自动填充 · 分页插件</text>
+      </g>
+      <g transform="translate(0,204)">
+        <rect width="540" height="52" rx="8" fill="#1e293b" stroke="#475569"/>
+        <text x="16" y="24" fill="#e2e8f0">dto/ vo/ entity/　<tspan fill="#94a3b8" font-weight="400">出入参与实体隔离</tspan></text>
+        <text x="16" y="42" fill="#64748b" font-size="11">Bean Validation 校验注解</text>
+      </g>
+      <g transform="translate(0,264)">
+        <rect width="540" height="52" rx="8" fill="#1e293b" stroke="#475569"/>
+        <text x="16" y="24" fill="#e2e8f0">config/ filter/　<tspan fill="#94a3b8" font-weight="400">安全配置 · JWT 过滤器 · CORS</tspan></text>
+        <text x="16" y="42" fill="#64748b" font-size="11">配置全部环境变量化，无明文密钥</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="640" y="560" text-anchor="middle" font-family="'Segoe UI','PingFang SC',sans-serif" font-size="12" fill="#64748b">命名约定：服务间调用走 Feign + Nacos 服务名；数据库按服务拆库（kb_*），跨库不 join，通过接口聚合</text>
+</svg>

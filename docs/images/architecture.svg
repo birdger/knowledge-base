@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="760" fill="#f8fafc"/>
+  <text x="640" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a">系统架构 · 9 微服务 + 多模存储</text>
+
+  <!-- clients -->
+  <g font-size="15" font-weight="600" text-anchor="middle">
+    <rect x="240" y="66" width="250" height="52" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="365" y="90" fill="#3730a3">React 18 + TypeScript</text>
+    <text x="365" y="108" fill="#6366f1" font-size="12" font-weight="400">Ant Design 5 · Vite · :3002</text>
+    <rect x="790" y="66" width="250" height="52" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+    <text x="915" y="90" fill="#065f46">WebSocket / STOMP</text>
+    <text x="915" y="108" fill="#059669" font-size="12" font-weight="400">实时通知 · 在线协作</text>
+  </g>
+  <path d="M365 118 V150" stroke="#64748b" stroke-width="1.6" marker-end="url(#arr)"/>
+  <path d="M915 118 V150" stroke="#64748b" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- gateway -->
+  <rect x="380" y="150" width="520" height="56" rx="12" fill="#4f46e5"/>
+  <text x="640" y="174" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">kb-gateway :8080</text>
+  <text x="640" y="194" text-anchor="middle" font-size="12.5" fill="#c7d2fe">统一入口 · JWT 鉴权 · 路由/负载均衡 · 统一响应封装 · CORS</text>
+
+  <!-- services row1 -->
+  <g font-size="14" font-weight="600" text-anchor="middle">
+    <g transform="translate(70,250)">
+      <rect width="220" height="70" rx="10" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.5"/>
+      <text x="110" y="28" fill="#3730a3">kb-user-auth :8081</text>
+      <text x="110" y="50" fill="#64748b" font-size="11.5" font-weight="400">注册/登录 · RBAC · 团队</text>
+      <text x="110" y="64" fill="#64748b" font-size="11.5" font-weight="400">邮箱验证 · JWT 刷新</text>
+    </g>
+    <g transform="translate(310,250)">
+      <rect width="220" height="70" rx="10" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.5"/>
+      <text x="110" y="28" fill="#3730a3">kb-document :8082</text>
+      <text x="110" y="50" fill="#64748b" font-size="11.5" font-weight="400">文档/分类/标签 · 版本</text>
+      <text x="110" y="64" fill="#64748b" font-size="11.5" font-weight="400">评论 · 收藏 · 审核流</text>
+    </g>
+    <g transform="translate(550,250)">
+      <rect width="220" height="70" rx="10" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.5"/>
+      <text x="110" y="28" fill="#3730a3">kb-search :8083</text>
+      <text x="110" y="50" fill="#64748b" font-size="11.5" font-weight="400">ES 全文检索</text>
+      <text x="110" y="64" fill="#64748b" font-size="11.5" font-weight="400">高亮 · 聚合 · 热搜</text>
+    </g>
+    <g transform="translate(790,250)">
+      <rect width="220" height="70" rx="10" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.5"/>
+      <text x="110" y="28" fill="#3730a3">kb-file :8084</text>
+      <text x="110" y="50" fill="#64748b" font-size="11.5" font-weight="400">上传/下载 · 预览</text>
+      <text x="110" y="64" fill="#64748b" font-size="11.5" font-weight="400">MinIO 分片存储</text>
+    </g>
+    <g transform="translate(1030,250)">
+      <rect width="180" height="70" rx="10" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.5"/>
+      <text x="90" y="28" fill="#3730a3">kb-statistics :8085</text>
+      <text x="90" y="50" fill="#64748b" font-size="11.5" font-weight="400">访问/点赞统计</text>
+      <text x="90" y="64" fill="#64748b" font-size="11.5" font-weight="400">趋势报表</text>
+    </g>
+  </g>
+
+  <!-- services row2 -->
+  <g font-size="14" font-weight="600" text-anchor="middle">
+    <g transform="translate(190,360)">
+      <rect width="260" height="70" rx="10" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+      <text x="130" y="28" fill="#6b21a8">kb-ai :8086</text>
+      <text x="130" y="50" fill="#7c727f" font-size="11.5" font-weight="400">RAG 知识问答 · 会话管理</text>
+      <text x="130" y="64" fill="#7c727f" font-size="11.5" font-weight="400">AI 写作 · 文档摘要</text>
+    </g>
+    <g transform="translate(470,360)">
+      <rect width="260" height="70" rx="10" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+      <text x="130" y="28" fill="#6b21a8">kb-graph :8088</text>
+      <text x="130" y="50" fill="#7c727f" font-size="11.5" font-weight="400">知识图谱构建</text>
+      <text x="130" y="64" fill="#7c727f" font-size="11.5" font-weight="400">实体抽取 · 关系查询</text>
+    </g>
+    <g transform="translate(750,360)">
+      <rect width="340" height="70" rx="10" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.5"/>
+      <text x="170" y="28" fill="#3730a3">kb-foundation :8089</text>
+      <text x="170" y="50" fill="#64748b" font-size="11.5" font-weight="400">WebSocket 通知 · 操作日志</text>
+      <text x="170" y="64" fill="#64748b" font-size="11.5" font-weight="400">字典 · 系统配置 · 通知模板</text>
+    </g>
+  </g>
+
+  <text x="640" y="470" text-anchor="middle" font-size="12" fill="#94a3b8">kb-common：统一响应体 / 全局异常 / JWT 工具 / Feign 拦截器（公共依赖，不独立部署）</text>
+
+  <!-- infra -->
+  <g font-size="13.5" font-weight="600" text-anchor="middle">
+    <g transform="translate(70,510)">
+      <rect width="250" height="190" rx="12" fill="#0f172a"/>
+      <text x="125" y="30" fill="#e2e8f0" font-size="14">结构化存储</text>
+      <text x="125" y="62" fill="#94a3b8" font-size="12" font-weight="400">MySQL 8 · 10 库 51 表</text>
+      <text x="125" y="84" fill="#94a3b8" font-size="11.5" font-weight="400" font-style="italic">kb_user / kb_document / kb_search</text>
+      <text x="125" y="102" fill="#94a3b8" font-size="11.5" font-weight="400" font-style="italic">kb_file / kb_ai / kb_graph …</text>
+      <text x="125" y="134" fill="#94a3b8" font-size="12" font-weight="400">Redis 7 · 缓存/会话</text>
+      <text x="125" y="162" fill="#94a3b8" font-size="12" font-weight="400">RabbitMQ · 异步事件</text>
+    </g>
+    <g transform="translate(350,510)">
+      <rect width="250" height="190" rx="12" fill="#0f172a"/>
+      <text x="125" y="30" fill="#e2e8f0" font-size="14">检索与图谱</text>
+      <text x="125" y="62" fill="#94a3b8" font-size="12" font-weight="400">Elasticsearch · 全文索引</text>
+      <text x="125" y="90" fill="#94a3b8" font-size="12" font-weight="400">Neo4j · 知识图谱</text>
+      <text x="125" y="118" fill="#94a3b8" font-size="12" font-weight="400">实体-关系-文档三元组</text>
+      <text x="125" y="150" fill="#94a3b8" font-size="12" font-weight="400">MinIO · 对象存储</text>
+      <text x="125" y="172" fill="#94a3b8" font-size="11" font-weight="400" font-style="italic">文档原件 / 附件 / 导出文件</text>
+    </g>
+    <g transform="translate(630,510)">
+      <rect width="250" height="190" rx="12" fill="#0f172a"/>
+      <text x="125" y="30" fill="#e2e8f0" font-size="14">注册与配置</text>
+      <text x="125" y="62" fill="#94a3b8" font-size="12" font-weight="400">Nacos · 服务发现</text>
+      <text x="125" y="84" fill="#94a3b8" font-size="12" font-weight="400">命名空间隔离 · 动态配置</text>
+      <text x="125" y="118" fill="#94a3b8" font-size="12" font-weight="400">Gateway lb:// 负载均衡</text>
+      <text x="125" y="150" fill="#94a3b8" font-size="12" font-weight="400">Knife4j · 聚合接口文档</text>
+    </g>
+    <g transform="translate(910,510)">
+      <rect width="300" height="190" rx="12" fill="#1e1b4b"/>
+      <text x="150" y="30" fill="#e2e8f0" font-size="14">AI 能力（Spring AI）</text>
+      <text x="150" y="62" fill="#a5b4fc" font-size="12" font-weight="400">LLM：通义千问 / DeepSeek</text>
+      <text x="150" y="90" fill="#a5b4fc" font-size="12" font-weight="400">Embedding → 向量召回</text>
+      <text x="150" y="118" fill="#a5b4fc" font-size="12" font-weight="400">Prompt 组装 → 流式回答</text>
+      <text x="150" y="150" fill="#a5b4fc" font-size="12" font-weight="400">多模型可切换 · Key 环境变量注入</text>
+    </g>
+  </g>
+
+  <text x="640" y="740" text-anchor="middle" font-size="12" fill="#94a3b8">所有外部地址与凭据均通过环境变量注入（见 .env.example），仓库内不含任何真实密钥</text>
+</svg>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="560" viewBox="0 0 1280 560" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#7c6fd0"/>
+    </marker>
+    <linearGradient id="ai" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="560" fill="#0f172a"/>
+  <text x="640" y="46" text-anchor="middle" font-size="24" font-weight="700" fill="#f1f5f9">AI 能力链路 · RAG 知识问答 / AI 写作</text>
+
+  <!-- question flow -->
+  <g font-size="14" font-weight="600" text-anchor="middle">
+    <g transform="translate(60,110)">
+      <rect width="170" height="66" rx="10" fill="#1e293b" stroke="#475569"/>
+      <text x="85" y="28" fill="#e2e8f0">用户提问</text>
+      <text x="85" y="48" fill="#94a3b8" font-size="11" font-weight="400">AI 助手 / 文档内问答</text>
+    </g>
+    <path d="M232 143 h30" stroke="#7c6fd0" stroke-width="1.8" marker-end="url(#arr2)"/>
+    <g transform="translate(266,110)">
+      <rect width="190" height="66" rx="10" fill="#1e293b" stroke="#475569"/>
+      <text x="95" y="28" fill="#e2e8f0">意图与改写</text>
+      <text x="95" y="48" fill="#94a3b8" font-size="11" font-weight="400">关键词 + 语义双通道</text>
+    </g>
+    <path d="M458 143 h30" stroke="#7c6fd0" stroke-width="1.8" marker-end="url(#arr2)"/>
+    <g transform="translate(492,110)">
+      <rect width="200" height="66" rx="10" fill="#1e293b" stroke="#8b5cf6"/>
+      <text x="100" y="28" fill="#ddd6fe">混合召回</text>
+      <text x="100" y="48" fill="#94a3b8" font-size="11" font-weight="400">ES 全文 ∥ 向量相似度 Top-K</text>
+    </g>
+    <path d="M694 143 h30" stroke="#7c6fd0" stroke-width="1.8" marker-end="url(#arr2)"/>
+    <g transform="translate(728,110)">
+      <rect width="200" height="66" rx="10" fill="#1e293b" stroke="#8b5cf6"/>
+      <text x="100" y="28" fill="#ddd6fe">上下文组装</text>
+      <text x="100" y="48" fill="#94a3b8" font-size="11" font-weight="400">引用片段 + 权限过滤 + Prompt</text>
+    </g>
+    <path d="M930 143 h30" stroke="#7c6fd0" stroke-width="1.8" marker-end="url(#arr2)"/>
+    <g transform="translate(964,110)">
+      <rect width="256" height="66" rx="10" fill="url(#ai)"/>
+      <text x="128" y="28" fill="#ffffff">LLM 生成（流式）</text>
+      <text x="128" y="48" fill="#ddd6fe" font-size="11" font-weight="400">通义千问 / DeepSeek · SSE 输出</text>
+    </g>
+  </g>
+
+  <!-- answer side -->
+  <g font-size="14" font-weight="600" text-anchor="middle">
+    <g transform="translate(964,220)">
+      <rect width="256" height="66" rx="10" fill="#1e293b" stroke="#34d399"/>
+      <text x="128" y="28" fill="#a7f3d0">回答 + 引用溯源</text>
+      <text x="128" y="48" fill="#94a3b8" font-size="11" font-weight="400">标注来源文档与段落</text>
+    </g>
+    <path d="M1092 288 V320 H520 V352" stroke="#7c6fd0" stroke-width="1.6" fill="none" marker-end="url(#arr2)"/>
+    <path d="M1092 288 V320 H200 V352" stroke="#7c6fd0" stroke-width="1.6" fill="none" marker-end="url(#arr2)"/>
+    <g transform="translate(60,352)">
+      <rect width="280" height="70" rx="10" fill="#1e293b" stroke="#475569"/>
+      <text x="140" y="28" fill="#e2e8f0">会话持久化</text>
+      <text x="140" y="50" fill="#94a3b8" font-size="11" font-weight="400">多轮上下文 · 会话管理（kb_ai）</text>
+    </g>
+    <g transform="translate(380,352)">
+      <rect width="280" height="70" rx="10" fill="#1e293b" stroke="#475569"/>
+      <text x="140" y="28" fill="#e2e8f0">反馈闭环</text>
+      <text x="140" y="50" fill="#94a3b8" font-size="11" font-weight="400">点赞/点踩 · 问答次数统计</text>
+    </g>
+  </g>
+
+  <!-- writing flow -->
+  <text x="640" y="300" text-anchor="middle" font-size="16" font-weight="700" fill="#a5b4fc">AI 写作（独立链路）</text>
+  <g font-size="13.5" font-weight="600" text-anchor="middle">
+    <g transform="translate(700,352)">
+      <rect width="220" height="70" rx="10" fill="#1e293b" stroke="#8b5cf6"/>
+      <text x="110" y="28" fill="#ddd6fe">主题 + 要求 + 风格</text>
+      <text x="110" y="50" fill="#94a3b8" font-size="11" font-weight="400">文章/报告/周报 · 语气 · 字数</text>
+    </g>
+    <path d="M922 387 h24" stroke="#7c6fd0" stroke-width="1.8" marker-end="url(#arr2)"/>
+    <g transform="translate(948,352)">
+      <rect width="272" height="70" rx="10" fill="#1e293b" stroke="#8b5cf6"/>
+      <text x="136" y="28" fill="#ddd6fe">流式生成 → 扩写 / 优化 / 续写</text>
+      <text x="136" y="50" fill="#94a3b8" font-size="11" font-weight="400">模板库 · 一键插入文档编辑器</text>
+    </g>
+  </g>
+
+  <!-- degradation -->
+  <g transform="translate(60,470)">
+    <rect width="1160" height="60" rx="10" fill="#134e4a" opacity="0.9"/>
+    <text x="24" y="26" fill="#a7f3d0" font-size="13.5" font-weight="700">降级策略</text>
+    <text x="110" y="26" fill="#d1fae5" font-size="12.5">未配置 LLM Key 时，问答与写作自动降级为「基于检索结果拼接 + 规则模板」的本地回答，核心检索链路不受影响；</text>
+    <text x="110" y="46" fill="#d1fae5" font-size="12.5">Embedding 失败时回退 ES 全文检索；所有模型密钥经环境变量注入，仓库不含任何明文 Key。</text>
+  </g>
+</svg>

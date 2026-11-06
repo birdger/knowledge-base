@@ -1,0 +1,129 @@
+# 5-12 KP 项目统一 .gitignore（deploy 增强版 v2）
+# 原始 .gitignore 已备份为 .gitignore.bak
+# 增强点：1) 排除 database SQL dump（含明文密码） 2) 排除 application-{dev,prod,test,local} 配置
+#        3) 排除 .env*（除 .env.example） 4) 排除 IDE/构建产物
+
+# ────────── Java 编译产物 ──────────
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# ────────── Maven 仓库（用户显式要求 F:\Environment\mavenepo）──────────
+.m2/
+
+# ────────── Spring Boot 多环境配置 ──────────
+# 先一次性排除所有 application-{xxx}.yml/properties，再单独恢复 application.yml/.properties
+application-prod.yml
+application-prod.properties
+application-dev.yml
+application-dev.properties
+application-test.yml
+application-test.properties
+application-local.yml
+application-local.properties
+application-*.yml
+application-*.properties
+# 只恢复基础 application.yml 和 application.properties（无环境后缀）
+!application.yml
+!application.properties
+
+# ────────── 数据库 dump（高风险：含明文密码） ──────────
+database/*dump*.sql
+database/*dump*.sql.gz
+database/*.sql.gz
+database/2026*/
+database/2025*/
+database/2024*/
+database/2023*/
+database/init_data*.sql
+!database/init_data.sql
+!database/README.md
+
+# ────────── Node / Vite / Vue 前端 ──────────
+node_modules/
+dist/
+dist-ssr/
+.local
+.cache/
+.vite/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ────────── 环境变量文件（绝不入库） ──────────
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+!.env.example
+
+# ────────── IDE 适配 ──────────
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.factorypath
+nb-configuration.xml
+nbproject/
+nbbuild/
+nbdist/
+.nb-gradle/
+.springBeans
+.sts4-cache
+.apt_generated
+
+# ────────── 操作系统 ──────────
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ────────── 日志/临时 ──────────
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# ────────── 上传/缓存（运行时） ──────────
+# 注意：必须加前导 / 只匹配仓库根目录！
+# 否则 file/ 会匹配到 Java 包目录 com/knowledge/base/file/，把源码整个忽略掉
+/uploads/
+/upload/
+/file/
+/files/
+/tmp/
+/temp/
+/data/
+
+# ────────── 测试/覆盖率 ──────────
+coverage/
+.nyc_output/
+*.lcov
+test-output/
+*.coveragexml
+
+# ────────── 证书/密钥（绝不入库） ──────────
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+keystore.jks
+truststore.jks
